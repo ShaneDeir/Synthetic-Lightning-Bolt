@@ -19,7 +19,7 @@ transition_matrix = np.array([[-1, 1, 0, 0, 0],  # from forming to forming, movi
 initial_probabilities = np.array([1, 0, 0, 0, 0])  # starts in the forming state
 
 # Set up the time steps
-time_steps = np.linspace(0, 3, 31)
+time_steps = np.linspace(0, 10, 101)
 
 # Calculate the probabilities at each time step
 probabilities = []
