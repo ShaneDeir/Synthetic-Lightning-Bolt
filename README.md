@@ -17,10 +17,10 @@ The state changes are calculated within a probability matrix. The following is a
 These two lines import the necessary libraries for the script. `numpy` is used for numerical computations, and `matplotlib.pyplot` is used for plotting the results.
 
     # Set up the transition matrix
-	   transition_matrix = np.array([[-1, 1, 0, 0, 0],  # from forming to forming, moving, splitting, striking, discharging
-                              [0, -1, 1, 0, 0],  # from moving to forming, moving, splitting, striking, discharging
-                              [0, 0, -1, 1, 0],  # from splitting to forming, moving, splitting, striking, discharging
-                              [0, 0, 0, -1, 1],  # from striking to forming, moving, splitting, striking, discharging
+	   transition_matrix = np.array([[-0.9, 0.1, 0, 0, 0],  # from forming to forming, moving, splitting, striking, discharging
+                              [0, -0.9, 0.1, 0, 0],  # from moving to forming, moving, splitting, striking, discharging
+                              [0, 0, -0.9, 0.1, 0],  # from splitting to forming, moving, splitting, striking, discharging
+                              [0, 0, 0, -0.9, 0.1],  # from striking to forming, moving, splitting, striking, discharging
                               [0, 0, 0, 0, 0]])  # from discharging to all states
 
 This code sets up the transition matrix for the continuous-time Markov chain. The matrix has 5 rows and 5 columns, corresponding to the 5 states of the lightning bolt: "forming", "moving", "splitting", "striking", and "discharging".
@@ -62,6 +62,9 @@ Extract the probabilities of each state. This is done by creating separate lists
 	plt.xlabel("Time (s)")
 	plt.ylabel("Probability")
 	plt.legend()
+	plt.ylim(0, 1)  # set the y-axis limits to 0-100%
+	plt.yticks(np.arange(0, 1.1, 0.1))  # set the y-axis tick marks to 0%, 10%, ..., 100%
+	plt.grid()  # show a grid
 	plt.show()
 
 This plots our synthetic lightning bolt into a graph so we can visually analyze the results. I hope you enjoyed the journey! Thank you and congratulations for making it this far! 
