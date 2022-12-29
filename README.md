@@ -1,8 +1,8 @@
 # Welcome to my Synthetic Lightning Bolt!
 
-This python script uses a continuous-time Markov chain to simulate a lightning bolt across 5 stages for 10 seconds and graphs the results. 
+This python script uses a continuous-time Markov chain to simulate a lightning bolt across 5 states for 10 seconds and graphs the results. 
 
-The stages are as follows:
+The states are as follows:
 
  1. Forming
  2. Moving
